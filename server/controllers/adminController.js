@@ -45,8 +45,8 @@ class adminController{
 
     async createSight(req,res){
         try {
-            const {title,description,location} = req.body
-            const sight = await sightModel.create({title,description,location})
+            const {title,description,district} = req.body
+            const sight = await sightModel.create({title,description,district})
             return res.status(200).json(sight)
         } catch (error) {
             console.log(error)
