@@ -6,7 +6,7 @@ const adminRouter = require('./routers/adminRouter')
 const sightRouter = require('./routers/sightRouter')
 const corsOptions = {
     origin: 'http://localhost:3000',
-    methods: ['GET','POST']
+    credentials:true
 }
 const PORT = 5000
 app.use(express.json())
