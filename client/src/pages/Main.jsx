@@ -6,7 +6,6 @@ const Main = () => {
 
   return (
       <div>
-        <Navbar/>
         <main
             className="relative bg-[url('https://ic.pics.livejournal.com/nnikolaevna75/40411848/167287/167287_original.jpg')] bg-cover bg-center bg-no-repeat"
         >
@@ -49,10 +48,10 @@ const Main = () => {
 
             <div className="mt-8 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-2">
               <Link
-                  to=""
+                  to="/map"
                   className="block text-white hover:text-sky-400 bg-sky-300 rounded-xl border p-8 shadow-xl transition hover:bg-orange-300/60 ease-out duration-200 hover:ease-in"
               >
-                <h2 className="mt text-2xl font-bold ">Карта</h2>
+                <h2 className="mt text-2xl font-bold ">Интерактивная карта Нижегородской области</h2>
 
                 <p className="mt-1 text-base font-semibold">
                  С помощью карты вы можете ознакомиться с достопремичательностями разных районов Нижегородской Области
@@ -60,7 +59,7 @@ const Main = () => {
               </Link>
 
               <Link
-                  to="/"
+                  to="/sights/all"
                   className="block text-white hover:text-sky-400 bg-sky-300 rounded-xl border p-8 shadow-xl transition hover:bg-orange-300/60 ease-out duration-200 hover:ease-in"
               >
                 <h2 className="mt text-2xl font-bold">Достопремичательности</h2>
@@ -75,20 +74,6 @@ const Main = () => {
 
 
 
-        <footer className="bg-white border-t-2 border-orange-300">
-          <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
-            <div className="sm:flex sm:items-center sm:justify-between">
-              <p className="mt-4 text-center text-m lg:mt-0"
-              >Copyright &copy; 2023. Все права защищены.</p>
-              <Link
-                  to="/"
-                  className="mt-4 text-center text-m hover:opacity-50 lg:mt-0 lg:text-right ">
-                Вход в панель администратора.
-              </Link>
-
-            </div>
-          </div>
-        </footer>
 
       </div>
   )
