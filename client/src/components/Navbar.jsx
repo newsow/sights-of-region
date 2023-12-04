@@ -9,8 +9,9 @@ const Navbar = () => {
             className="mx-auto flex h-16 max-w-screen-2xl items-center justify-between sm:px-6 lg:px-8"
         >
             <div className="flex items-center gap-4">
-                <Link to="/">
-                    <img src={logo} className='w-12' alt="Logo" />
+                <Link
+                    to="">
+                    <img src={logo} className='w-12 fill-sky-500' alt="Logo" />
                 </Link>
             </div>
 

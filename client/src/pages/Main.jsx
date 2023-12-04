@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Main = () => {
 
@@ -41,7 +42,7 @@ const Main = () => {
 
               <Link
                   to="/"
-                  className="mt-4 text-xl font-medium text-orange-300">
+                  className="mt-8 text-xl font-medium text-orange-300">
                 Лучшие места для знакомства с Нижегородской Областью
               </Link>
             </div>
