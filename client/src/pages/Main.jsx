@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Main = () => {
 
@@ -42,7 +43,7 @@ const Main = () => {
 
               <Link
                   to="/"
-                  className="mt-4 text-xl font-medium text-orange-300">
+                  className="mt-8 text-xl font-medium text-orange-300">
                 Лучшие места для знакомства с Нижегородской Областью
               </Link>
             </div>
@@ -72,24 +73,7 @@ const Main = () => {
             </div>
           </div>
         </section>
-
-
-
-        <footer className="bg-white border-t-2 border-orange-300">
-          <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
-            <div className="sm:flex sm:items-center sm:justify-between">
-              <p className="mt-4 text-center text-m lg:mt-0"
-              >Copyright &copy; 2023. Все права защищены.</p>
-              <Link
-                  to="/"
-                  className="mt-4 text-center text-m hover:opacity-50 lg:mt-0 lg:text-right ">
-                Вход в панель администратора.
-              </Link>
-
-            </div>
-          </div>
-        </footer>
-
+        <Footer/>
       </div>
   )
 }
