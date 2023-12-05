@@ -1,9 +1,10 @@
 const adminModel = require('../models/adminModel')
 const sightModel = require('../models/sightModel')
 const bcrypt = require('bcrypt')
+require('dotenv').config()
 const jwt = require('jsonwebtoken')
-const salt = 3
-const secretKey = '1111'
+const salt = Number(process.env.salt) || 3
+const secretKey = process.env.secretKey || '1111'
 
 
 const generateAccesToken = (id,login) =>{
@@ -35,7 +36,8 @@ class adminController{
             if(candidate){
                 return res.status(400).json({messgae:"такой admin уже существует"})
             }
-            const admin = await adminModel.create({login,password})
+            const hashPassword = bcrypt.hashSync(password,salt)
+            const admin = await adminModel.create({login,password:hashPassword})
             return res.status(200).json(admin)
         } catch (error) {
             console.log(error)
