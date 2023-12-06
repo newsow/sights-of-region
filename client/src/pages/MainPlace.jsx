@@ -6,7 +6,6 @@ import Footer from "../components/Footer";
 
 const MainPlace = () => {
     return <div>
-        <Navbar/>
         <div className='flex mx-6 my-6'>
             <Link
                 to='/'
@@ -38,7 +37,6 @@ const MainPlace = () => {
 
         </main>
 
-        <Footer/>
     </div>
 
 }

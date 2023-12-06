@@ -16,7 +16,9 @@ const Sights = () => {
   return (
     <div className='w-full h-full flex-col justify-center '>
         <div className="flex justify-center">
-            <form className='w-4/5'>   
+            
+            <form className='w-4/5 mt-9'>
+            <h1 className='my-4 text-lg font-bold'>Достопремичательности Нижегородской области</h1>   
                 <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                 <div class="relative">
                     <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -37,9 +39,9 @@ const Sights = () => {
             </form>
         </div>
         <div className="flex flex-wrap justify-center mx-8 my-8">
-            {filtredSights.map((sight)=>{
-                return(<Sight sight={sight} key={sight._id}/>)
-            })}
+                {filtredSights.map((sight)=>{
+                    return(<Sight sight={sight} key={sight._id}/>)
+                })}
         </div>
     </div>
   )

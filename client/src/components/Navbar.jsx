@@ -21,14 +21,14 @@ const Navbar = () => {
                     className="flex gap-2 sm:gap-3 lg:text-xs font-bold lg:uppercase lg:tracking-wide text-white"
                 >
                     <Link
-                        to="/"
+                        to="/map"
                         className="block text-white py-2 px-3 sm:px-6 rounded-md bg-sky-400 hover:bg-sky-600"
                     >
                         Карта
                     </Link>
 
                     <Link
-                        to="/"
+                        to="/sights/all"
                         className="block text-white py-2 px-3 sm:px-6 rounded-md bg-sky-400  hover:bg-sky-600"
                     >
                         Достопремичательности
