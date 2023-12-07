@@ -6,21 +6,19 @@ const AdminLogin = () => {
   const [login,setLogin] = useState('')
   const [password,setPassword] = useState('')
   const navigate = useNavigate()
-  const redirectChat = (status) =>{
-    if(status === 200){
-        return navigate('/chat')
-    }
-  } 
+
   const loginForm = async(e) =>{
       try {
           e.preventDefault()
-          const response = await axios.post('http://localhost:5000/auth/login',{
+          const response = await axios.post('http://localhost:5000/admin/login',{
               login,
               password,
           }
           )
           localStorage.setItem('token',response.data.token) 
-          redirectChat(response.status,response.data.id)
+          if(response.status===200){
+            return navigate('/admin/panel')
+          }
       } catch (error) {
           console.log(error)
       }
@@ -44,12 +42,12 @@ const AdminLogin = () => {
 			<input type="hidden" name="remember" value="true" />
 			<div className="relative">
 				<label className="text-sm font-bold text-gray-700 tracking-wide"
-        for="Email">
+        for="login">
         Login</label>
 				<input className=" w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" placeholder="Введите login"
-        id="Email"
-        type="email"
-        name="email"
+        id="login"
+        type="text"
+        name="login"
         value={login}
         onChange={(e)=>setLogin(e.target.value)}
          />

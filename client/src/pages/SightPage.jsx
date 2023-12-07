@@ -1,10 +1,17 @@
 // LandmarkPage.js
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import image from '../images/admin-login.jpg'
+import React,{useState,useEffect} from 'react';
+import { useNavigate,useParams } from 'react-router-dom';
+import axios from 'axios';
 const SightPage = () => {
   const navigate = useNavigate();
-
+  const {id} = useParams()
+  const [sight,setSight] = useState([])
+  useEffect(()=>{
+    axios.get(`http://localhost:5000/sights/one/${id}`)
+    .then(res=>{
+      setSight(res.data)
+    })
+  })
   const handleGoBack = () => {
     return navigate(-1);
   };
@@ -12,27 +19,27 @@ const SightPage = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-8">
       <div className="max-w-6xl mx-auto bg-white p-8 rounded-md shadow-md">
-        <h1 className="text-4xl font-bold mb-6">Landmark Name</h1>
+        <h1 className="text-4xl font-bold mb-6">{sight.title}</h1>
 
         {/* Landmark Image */}
         <img
-          src={image} // Замените на путь к изображению достопримечательности
+          src={'http://localhost:5000/'+sight.imagePath} // Замените на путь к изображению достопримечательности
           alt="Landmark"
           className="w-full h-96 object-cover mb-6 rounded-md"
         />
 
         {/* Landmark Information */}
         <div className="mb-6">
-          <h2 className="text-2xl font-bold mb-4">Description</h2>
+          <h2 className="text-2xl font-bold mb-4">Описание</h2>
           <p className="text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+           {sight.description}
           </p>
         </div>
 
         <div className="mb-6">
-          <h2 className="text-2xl font-bold mb-4">Location</h2>
+          <h2 className="text-2xl font-bold mb-4">Местонахождение</h2>
           <p className="text-gray-700">
-            City, Country
+            {sight.district}
           </p>
         </div>
 

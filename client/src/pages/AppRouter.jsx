@@ -17,12 +17,12 @@ const AppRouter = () => {
       <Routes>
         <Route path='/' element={<Layout/>}>
           <Route path='/' element={<Main/>}/>
-          <Route path='/place' element={<SightPage/>}/>
           <Route path='/admin/panel' element={<AdminSidebar/>}>
             <Route path='/admin/panel' element={<AdminForm/>}/>
             <Route path='/admin/panel/sight' element={<SightForm/>}/>
           </Route>
           <Route path='/sights/all' element={<Sights/>}/>
+          <Route path='/sight/:id' element={<SightPage/>}/>
           <Route path='/map' element={<Map/>} />
           <Route path='*' element={<NotFoundPage/>} />
         </Route>

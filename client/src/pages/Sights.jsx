@@ -5,22 +5,15 @@ import image from '../images/admin-login.jpg'
 import axios from 'axios'
 const Sights = () => {
     const [search,setSearch] = useState('')
-    const [sights,setSights] = useState([  
-    { id: 1, name: 'Знаменитость 1', description: 'Описание 1', image: image},
-    { id: 2, name: 'Знаlajff', description: 'Описание 2', image: image },
-    { id: 3, name: 'Горфда 2', description: 'Описание 2', image: image },
-    { id: 4, name: 'фафа 2', description: 'Описание 2', image: image },
-    { id: 5, name: 'Знаменитость 2', description: 'Описание 2', image: image },
-    { id: 6, name: 'Знамефвйййнитость 2', description: 'Описание 2', image: image },
-])
-    // useEffect(()=>{
-    //     axios.get('http://localhost:5000/sights/all')
-    //     .then(res=>{
-    //         setSights(res.data)
-    //     }).catch(error=>{console.log(error)})
-    // },[])
+    const [sights,setSights] = useState([])
+    useEffect(()=>{
+        axios.get('http://localhost:5000/sights/all')
+        .then(res=>{
+            setSights(res.data)
+        }).catch(error=>{console.log(error)})
+    },[])
     const filtredSights = sights.filter(sight=>{
-        return sight.name.toLowerCase().includes(search.toLowerCase())
+        return sight.title.toLowerCase().includes(search.toLowerCase())
     })
   return (
     <div className='w-full h-full flex-col justify-center '>
