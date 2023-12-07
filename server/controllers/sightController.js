@@ -12,7 +12,7 @@ class sightController{
 
     async oneSight(req,res){
         try {
-            const {id} = req.body
+            const {id} = req.params
             const sight = await sightModel.findById(id)
             return res.status(200).json(sight)
         } catch (error) {

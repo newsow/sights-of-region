@@ -3,7 +3,6 @@ const app = express()
 require('dotenv').config()
 const cors = require('cors')
 const mongoose = require('mongoose')
-const fileupload = require('express-fileupload')
 const adminRouter = require('./routers/adminRouter')
 const sightRouter = require('./routers/sightRouter')
 const corsOptions = {
@@ -14,7 +13,7 @@ const PORT = 5000
 const dbUrl = process.env.DBURL || 'mongodb://127.0.0.1:27017/sights'
 app.use(express.json())
 app.use(cors(corsOptions))
-app.use(fileupload({}))
+app.use(express.static('images'))
 app.use('/admin',adminRouter)
 app.use('/sights',sightRouter)
 

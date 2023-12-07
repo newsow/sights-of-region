@@ -3,7 +3,7 @@ const sightModel = require('../models/sightModel')
 const bcrypt = require('bcrypt')
 require('dotenv').config()
 const jwt = require('jsonwebtoken')
-const salt = Number(process.env.salt) || 3
+const salt = parseInt(process.env.salt) || 3
 const secretKey = process.env.secretKey || '1111'
 
 
@@ -48,10 +48,8 @@ class adminController{
     async createSight(req,res){
         try {
             const {title,description,district} = req.body
-            const file = req.files.file
-            const path = `images/sights/${file.name}`
-            file.mv(path)
-            const sight = await sightModel.create({title,description,district,imagePath:path})
+            const file = req.file.filename
+            const sight = await sightModel.create({title,description,district,imagePath:file})
             return res.status(200).json(sight)
         } catch (error) {
             console.log(error)
