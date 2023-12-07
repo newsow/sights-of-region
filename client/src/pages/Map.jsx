@@ -2,16 +2,21 @@ import React from 'react'
 
 export default function Map() {
   return (
-    <div className='flex justify-center'>
-        <div>
-            <h1>
-                Интерактивная карта Нижегородской области
+    <div className='flex justify-center bg-[url(https://ic.pics.livejournal.com/nnikolaevna75/40411848/167287/167287_original.jpg)]'>
+        <div className=' mt-3 '>
+            <h1 className='flex font-bold sm:text-2xl lg:text-3xl sm:my-1.5 lg:my-3 mx-5 text-white'>
+                Интерактивная карта Нижегородской Области
             </h1>
             <div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d567965.5275481252!2d43.970831693233386!3d56.21560526203981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1701700141923!5m2!1sru!2sru" width="800" height="600" style={{border:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                    className=' flex ml-16 mb-3 rounded-xl w-4/5'
+                    title='Map'
+                    height='600'
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A2861c5bf1d275123895f654f412df69e7e2e9159378ed1da8297a5d3bca364f6&amp;source=constructor"
+                >
+                </iframe>
             </div>
         </div>
-
     </div>
   )
 }
