@@ -10,6 +10,7 @@ import SightPage from './SightPage'
 import AdminSidebar from '../components/AdminSidebar'
 import AdminForm from '../components/AdminForm'
 import SightForm from '../components/SightForm'
+import SightsList from './SightsList'
 
 const AppRouter = () => {
   return (
@@ -26,7 +27,6 @@ const AppRouter = () => {
           <Route path='/map' element={<Map/>} />
           <Route path='*' element={<NotFoundPage/>} />
         </Route>
-
         <Route path='/admin/login' element={<AdminLogin/>}/>
       </Routes>
     </div>
