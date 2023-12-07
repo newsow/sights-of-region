@@ -48,7 +48,10 @@ class adminController{
     async createSight(req,res){
         try {
             const {title,description,district} = req.body
-            const sight = await sightModel.create({title,description,district})
+            const file = req.files.file
+            const path = `images/sights/${file.name}`
+            file.mv(path)
+            const sight = await sightModel.create({title,description,district,imagePath:path})
             return res.status(200).json(sight)
         } catch (error) {
             console.log(error)
