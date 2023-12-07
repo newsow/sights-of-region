@@ -45,6 +45,22 @@ const SightForm = () => {
                 className="w-full p-2 border border-gray-300 rounded"
               />
             </div>
+            <div className="flex items-center justify-center mb-12">
+               <div className="bg-gray-200 p-8 rounded-md shadow-md">
+                 <label htmlFor="photoInput" className="block text-gray-700 font-bold mb-2">
+                   Загрузить фотографию
+                 </label>
+                 <input
+                   type="file"
+                   id="photoInput"
+                   className="border rounded-md py-2 px-3 w-full"
+                   accept="image/*"
+                 />
+                 <button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                   Загрузить
+                 </button>
+               </div>
+            </div>
 
 
             <button

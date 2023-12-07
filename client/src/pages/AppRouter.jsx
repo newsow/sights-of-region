@@ -10,7 +10,6 @@ import SightPage from './SightPage'
 import AdminSidebar from '../components/AdminSidebar'
 import AdminForm from '../components/AdminForm'
 import SightForm from '../components/SightForm'
-import SightsList from './SightsList'
 
 const AppRouter = () => {
   return (
